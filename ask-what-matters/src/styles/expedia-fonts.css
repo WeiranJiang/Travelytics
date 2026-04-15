@@ -1,0 +1,33 @@
+/* Expedia Centra No2 + Reckless XPD loaded from Expedia's public CDN.
+   Prototype-only. Swap to Inter for a production build. */
+
+@font-face {
+  font-display: swap;
+  font-family: 'Centra No2';
+  font-weight: 300;
+  src: url('https://a.travel-assets.com/egds/fonts/CentraNo2/CentraNo2-Light.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Centra No2';
+  font-weight: 400;
+  src: url('https://a.travel-assets.com/egds/fonts/CentraNo2/CentraNo2-Book.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Centra No2';
+  font-weight: 500;
+  src: url('https://a.travel-assets.com/egds/fonts/CentraNo2/CentraNo2-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Centra No2';
+  font-weight: 700;
+  src: url('https://a.travel-assets.com/egds/fonts/CentraNo2/CentraNo2-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Reckless XPD';
+  font-weight: 400;
+  src: url('https://a.travel-assets.com/egds/fonts/RecklessXPD/RecklessXPD-Regular.woff2') format('woff2');
+}

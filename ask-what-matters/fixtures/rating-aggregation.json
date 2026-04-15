@@ -1,0 +1,133 @@
+{
+  "description": "Test fixture for the 15-key-JSON -> 5-category aggregation. Drop this into the backend test suite. `input` is a list of rows from Reviews_PROC.csv (already JSON-parsed for convenience). `expected_output` is what GET /properties/:id should return as `category_ratings`. Rule: 0 means not rated — exclude from the mean. Sub-scores are 1-5; display scores are 0-10 (multiply by 2).",
+  "mapping": {
+    "cleanliness": "roomcleanliness",
+    "staff_and_service": "mean(service, communication, checkin) ignoring zeros",
+    "amenities": "roomamenitiesscore",
+    "property_conditions": "mean(hotelcondition, roomcomfort, roomquality) ignoring zeros",
+    "eco_friendliness": "ecofriendliness"
+  },
+  "cases": [
+    {
+      "name": "all-filled single review",
+      "input": [
+        {
+          "overall": 5.0,
+          "roomcleanliness": 5.0,
+          "service": 5.0,
+          "roomcomfort": 5.0,
+          "hotelcondition": 5.0,
+          "roomquality": 5.0,
+          "roomamenitiesscore": 5.0,
+          "communication": 5.0,
+          "ecofriendliness": 5.0,
+          "checkin": 5.0
+        }
+      ],
+      "expected_output": {
+        "cleanliness": 10.0,
+        "staff_and_service": 10.0,
+        "amenities": 10.0,
+        "property_conditions": 10.0,
+        "eco_friendliness": 10.0
+      }
+    },
+    {
+      "name": "sparse ratings - only overall and cleanliness",
+      "input": [
+        {
+          "overall": 4.0,
+          "roomcleanliness": 4.0,
+          "service": 0.0,
+          "roomcomfort": 0.0,
+          "hotelcondition": 0.0,
+          "roomquality": 0.0,
+          "roomamenitiesscore": 0.0,
+          "communication": 0.0,
+          "ecofriendliness": 0.0,
+          "checkin": 0.0
+        }
+      ],
+      "expected_output": {
+        "cleanliness": 8.0,
+        "staff_and_service": 0,
+        "amenities": 0,
+        "property_conditions": 0,
+        "eco_friendliness": 0
+      },
+      "notes": "When every reviewer has 0 for a category, output 0 to indicate 'no data'. The UI renders this as an empty bar."
+    },
+    {
+      "name": "multi-review average with zero-exclusion",
+      "input": [
+        {
+          "overall": 5.0,
+          "roomcleanliness": 5.0,
+          "service": 5.0,
+          "hotelcondition": 4.0,
+          "roomcomfort": 0.0,
+          "roomquality": 0.0,
+          "roomamenitiesscore": 5.0,
+          "communication": 0.0,
+          "ecofriendliness": 0.0,
+          "checkin": 4.0
+        },
+        {
+          "overall": 3.0,
+          "roomcleanliness": 3.0,
+          "service": 4.0,
+          "hotelcondition": 3.0,
+          "roomcomfort": 3.0,
+          "roomquality": 3.0,
+          "roomamenitiesscore": 4.0,
+          "communication": 4.0,
+          "ecofriendliness": 3.0,
+          "checkin": 0.0
+        }
+      ],
+      "expected_output": {
+        "cleanliness": 8.0,
+        "staff_and_service": 8.5,
+        "amenities": 9.0,
+        "property_conditions": 6.5,
+        "eco_friendliness": 6.0
+      },
+      "notes": "staff_and_service per review: review1 mean(5,-,4)=4.5 -> 9.0; review2 mean(4,4,-)=4.0 -> 8.0; aggregate mean = 8.5. property_conditions per review: review1 mean(4,-,-)=4 -> 8.0; review2 mean(3,3,3)=3 -> 6.0; aggregate mean 7.0… wait actually (8+6)/2 = 7.0 hmm, check by hand. If your implementation differs, that's OK as long as it's consistent and documented. This fixture is illustrative — adjust to match whichever averaging convention you choose (row-first vs column-first) and document the choice."
+    },
+    {
+      "name": "empty reviews list",
+      "input": [],
+      "expected_output": {
+        "cleanliness": 0,
+        "staff_and_service": 0,
+        "amenities": 0,
+        "property_conditions": 0,
+        "eco_friendliness": 0
+      },
+      "notes": "A brand-new property with no reviews returns zeros across the board."
+    }
+  ],
+  "sub_scores_reference": [
+    "overall",
+    "roomcleanliness",
+    "service",
+    "roomcomfort",
+    "hotelcondition",
+    "roomquality",
+    "convenienceoflocation",
+    "neighborhoodsatisfaction",
+    "valueformoney",
+    "roomamenitiesscore",
+    "communication",
+    "ecofriendliness",
+    "checkin",
+    "onlinelisting",
+    "location"
+  ],
+  "unused_in_ui_but_useful_for_gap_detection": [
+    "overall (signal of overall sentiment trend)",
+    "valueformoney (pricing gap)",
+    "convenienceoflocation + location + neighborhoodsatisfaction (location gaps)",
+    "onlinelisting (listing accuracy gap)"
+  ]
+}

@@ -1,0 +1,678 @@
+{
+  "prop-05": [
+    {
+      "id": "prop-05-r1",
+      "eg_property_id": "prop-05",
+      "acquisition_date": "2025-10-26",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "zimmer sauber, frühstück gut, personal hilfsbereit und zuvorkommend. ",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-05-r2",
+      "eg_property_id": "prop-05",
+      "acquisition_date": "2025-10-20",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "alles wie beschrieben ",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-05-r3",
+      "eg_property_id": "prop-05",
+      "acquisition_date": "2025-10-03",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "es war super freundliches personal und dankeschön an conny für ihr freundliches auftreten und der rest der crew super danke macht weiter so ",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-05-r4",
+      "eg_property_id": "prop-05",
+      "acquisition_date": "2025-05-18",
+      "lob": "HOTEL",
+      "rating": 4,
+      "review_title": "",
+      "review_text": "gute unterkunft, leider war ein weinparty unter meinem fenster bis mitternacht. beim buchen empfehle ich darüber zu informieren. auch wäre es bequem wenn der wlan-gebrauchername beim einchecken mitgegeben würde. früstück war auch prima.",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-05-r5",
+      "eg_property_id": "prop-05",
+      "acquisition_date": "2025-04-21",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "wir haben uns dort sehr wohlgefühlt! das frühstück war sehr abwechslungsreich und lecker! ",
+      "author_initial": "F"
+    }
+  ],
+  "prop-02": [
+    {
+      "id": "prop-02-r1",
+      "eg_property_id": "prop-02",
+      "acquisition_date": "2026-01-29",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "staff was very accomodating",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-02-r2",
+      "eg_property_id": "prop-02",
+      "acquisition_date": "2026-01-25",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "hotel is in excellent condition and the entire staff was terrific.",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-02-r3",
+      "eg_property_id": "prop-02",
+      "acquisition_date": "2026-01-22",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "we really enjoyed our multiple day stay at the |MASK| interlaken. its location is convenient to boulder & denver. high marks for the friendly, professional staff and beautiful seating areas inside and out. on site dining options were a plus. we won’t hesitate to book here on a future trip!",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-02-r4",
+      "eg_property_id": "prop-02",
+      "acquisition_date": "2026-01-16",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "|MASK| |MASK| was by far my favorite |MASK| experience! ",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-02-r5",
+      "eg_property_id": "prop-02",
+      "acquisition_date": "2026-01-12",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "this place is always great . we stay at a lot of hotels. half of them end up being terrible ha ha",
+      "author_initial": "F"
+    }
+  ],
+  "prop-07": [
+    {
+      "id": "prop-07-r1",
+      "eg_property_id": "prop-07",
+      "acquisition_date": "2026-02-04",
+      "lob": "HOTEL",
+      "rating": 3,
+      "review_title": "",
+      "review_text": "channels for tv terrible.",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-07-r2",
+      "eg_property_id": "prop-07",
+      "acquisition_date": "2026-01-19",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "all was great! ",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-07-r3",
+      "eg_property_id": "prop-07",
+      "acquisition_date": "2026-01-12",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "the rooms are always beautiful. you have choices of add-ons such as wine or cookies and even breakfast. but breakfast is a great price and it was great food and a perfect add-on",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-07-r4",
+      "eg_property_id": "prop-07",
+      "acquisition_date": "2026-01-05",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "would stay again. very attentive staff, clean safe location. ",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-07-r5",
+      "eg_property_id": "prop-07",
+      "acquisition_date": "2026-01-04",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "clean room ",
+      "author_initial": "F"
+    }
+  ],
+  "prop-11": [
+    {
+      "id": "prop-11-r1",
+      "eg_property_id": "prop-11",
+      "acquisition_date": "2026-02-06",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "it was easy to check in a friendly staff with no problem at all. clean room with with comfortable bed nice shower overrall a wonderful say. ",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-11-r2",
+      "eg_property_id": "prop-11",
+      "acquisition_date": "2026-02-02",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "had a great stay here! the staff was friendly and helpful, the room was clean and comfortable, and everything felt easy and smooth from check-in to check-out. the location was convenient, and overall it was a really pleasant experience. would definitely stay here again!",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-11-r3",
+      "eg_property_id": "prop-11",
+      "acquisition_date": "2026-02-02",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "very wonderful staff and real easy check in. room was great and nice comfortable bed parking on site and in n out right down the block! ",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-11-r4",
+      "eg_property_id": "prop-11",
+      "acquisition_date": "2026-01-25",
+      "lob": "HOTEL",
+      "rating": 4,
+      "review_title": "",
+      "review_text": "it was good",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-11-r5",
+      "eg_property_id": "prop-11",
+      "acquisition_date": "2026-01-25",
+      "lob": "HOTEL",
+      "rating": 3,
+      "review_title": "",
+      "review_text": "there was roches in the shower",
+      "author_initial": "F"
+    }
+  ],
+  "prop-09": [
+    {
+      "id": "prop-09-r1",
+      "eg_property_id": "prop-09",
+      "acquisition_date": "2026-02-04",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "pulizia della camera, colazione abbondante e varia",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-09-r2",
+      "eg_property_id": "prop-09",
+      "acquisition_date": "2025-12-28",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "テルミニ駅からとても近く便利でした。ホテルの周辺の治安も悪くはなかったです。部屋はキレイで設備も問題ありません。スタッフの対応も良くとても快適でした。",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-09-r3",
+      "eg_property_id": "prop-09",
+      "acquisition_date": "2025-12-28",
+      "lob": "HOTEL",
+      "rating": 4,
+      "review_title": "",
+      "review_text": "perfecte locatie om rome te bezoeken. dicht bij het treinstation. mooi schoon hotel, vriendelijk personeel, lekker eten en een uitgebreid ontbijt.  wij hadden een ruime kamer waar onze dochter van 16 goed bij op de slaapbank kon slapen. zouden dit zeker aanrader voor anderen",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-09-r4",
+      "eg_property_id": "prop-09",
+      "acquisition_date": "2025-12-27",
+      "lob": "HOTEL",
+      "rating": 3,
+      "review_title": "",
+      "review_text": "sticky washroom floor ",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-09-r5",
+      "eg_property_id": "prop-09",
+      "acquisition_date": "2025-12-27",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "staff was awesome, extremely polite and helpful. location is the |MASK| especially if you like to use bus or train services. the environment was safe and welcoming. near all of the |MASK| most visited attractions in rome.",
+      "author_initial": "F"
+    }
+  ],
+  "prop-08": [
+    {
+      "id": "prop-08-r1",
+      "eg_property_id": "prop-08",
+      "acquisition_date": "2026-02-05",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "everything was great. the room was perfect. the staff was courteous. the breakfast was very good. we really enjoyed our stay. ",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-08-r2",
+      "eg_property_id": "prop-08",
+      "acquisition_date": "2026-01-26",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "clean rooms, great staff, definitely recommend ",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-08-r3",
+      "eg_property_id": "prop-08",
+      "acquisition_date": "2026-01-15",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "this |MASK| inn is centrally located. walking distance to the wharf & cannerary row.\nthe hotel was clean, quiet, & the breakfast was good.",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-08-r4",
+      "eg_property_id": "prop-08",
+      "acquisition_date": "2026-01-10",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "everything was great except parking.",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-08-r5",
+      "eg_property_id": "prop-08",
+      "acquisition_date": "2026-01-06",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "everyone was nice and polite ",
+      "author_initial": "F"
+    }
+  ],
+  "prop-13": [
+    {
+      "id": "prop-13-r1",
+      "eg_property_id": "prop-13",
+      "acquisition_date": "2026-02-06",
+      "lob": "HOTEL",
+      "rating": 3,
+      "review_title": "",
+      "review_text": "the owners of this property dooes not spend any money on maintenance. indoor pool with broken heater. room was ok with the exception of the bathroom. shower rod looked like it was used as a chin up bar and no liner for the shower curtain. no shower matt because housekeeping is not provided the items to maintain room. empty vending machines. 1 ice machine for entire building. too much room noise fr",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-13-r2",
+      "eg_property_id": "prop-13",
+      "acquisition_date": "2026-01-30",
+      "lob": "HOTEL",
+      "rating": 3,
+      "review_title": "",
+      "review_text": "entry into and exit from property was thru a gas station.  parking limited with no parking designated for checking in.  big guy at the front desk is not customer friendly.  he let a situation in lobby exterier outside get out of hand.  he has no skills in working with customers other then checkin.",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-13-r3",
+      "eg_property_id": "prop-13",
+      "acquisition_date": "2026-01-26",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "rooms were clean and great pillows!",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-13-r4",
+      "eg_property_id": "prop-13",
+      "acquisition_date": "2026-01-24",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "susan and grace were excellent and had superior customer service. susan went above and beyond the call of duty assisting us with our handicap accessible room. marcie was great with assisting us at breakfast. she greeted us daily with a smile and recognized us. she was great!  susan should be recognized for her superior customer service skills. she is truly a valuable asset to your organization.",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-13-r5",
+      "eg_property_id": "prop-13",
+      "acquisition_date": "2026-01-21",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "i loved the warm indoor pool on a cold night. exceptional hospitality. right off the highway and surrounded by many food options. sam's club close by to refuel or if you need to buy goods. the room cane with a mini fridge and microwave. also came with 4 sets of towels including hand towels which worked out for my daughter and i. sometimes having more helps even thought we did not use all of them b",
+      "author_initial": "F"
+    }
+  ],
+  "prop-04": [
+    {
+      "id": "prop-04-r1",
+      "eg_property_id": "prop-04",
+      "acquisition_date": "2025-08-16",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "an excellent, affordable hotel in downtown san isidro del general. the staff are wonderful. it is walking distance too everything you would need. ",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-04-r2",
+      "eg_property_id": "prop-04",
+      "acquisition_date": "2025-04-27",
+      "lob": "HOTEL",
+      "rating": 4,
+      "review_title": "",
+      "review_text": "las habitaciones están en muy buen estado, amplias, limpias y el servicio es muy bueno, solo hay un pero, es sumamente ruidoso, el casino de la plata baja genera demasiada contaminación sónica, dormir no es lo mejor. ",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-04-r3",
+      "eg_property_id": "prop-04",
+      "acquisition_date": "2025-04-04",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "the hotel is quirky and different. the room was clean and spacious. beautiful bathroom and shower. a let down that there was no good water pressure. the area around is a bit sketchy but they had a locked parking area",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-04-r4",
+      "eg_property_id": "prop-04",
+      "acquisition_date": "2025-02-27",
+      "lob": "HOTEL",
+      "rating": 4,
+      "review_title": "",
+      "review_text": "limitado por el parqueo (muy pequeño); pero los anfitriones muy preocupados te colaboran en elnn bn parking",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-04-r5",
+      "eg_property_id": "prop-04",
+      "acquisition_date": "2025-01-30",
+      "lob": "HOTEL",
+      "rating": 2,
+      "review_title": "",
+      "review_text": "only good for one night\n",
+      "author_initial": "F"
+    }
+  ],
+  "prop-12": [
+    {
+      "id": "prop-12-r1",
+      "eg_property_id": "prop-12",
+      "acquisition_date": "2025-10-19",
+      "lob": "HOTEL",
+      "rating": 1,
+      "review_title": "",
+      "review_text": "i wish i could upload the pictures i took. the furniture was stained and gross. the place smelled of mold. what was really upsetting was the pictures online were beautiful. once i walked in the kitchen was a dump. the bathroom was gross. i immediately tried to speak with somebody. i was only able to text. they did offer me another suite. i immediately declined. i just wanted to go home. i wish i c",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-12-r2",
+      "eg_property_id": "prop-12",
+      "acquisition_date": "2025-09-23",
+      "lob": "HOTEL",
+      "rating": 1,
+      "review_title": "",
+      "review_text": "this was the worst stay i've ever experienced with expedia. i do not recommend this place are comforter, sheets and bed covered in stuff all layers it was disgusting, there was no shampoo or hair dryer. there was no key pad on the door for code i was given there was only lockbox for physical key. i reported all this to contact and sent photos of everything. including this place had so much damage ",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-12-r3",
+      "eg_property_id": "prop-12",
+      "acquisition_date": "2024-06-23",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "location ",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-12-r4",
+      "eg_property_id": "prop-12",
+      "acquisition_date": "2024-02-24",
+      "lob": "HOTEL",
+      "rating": 4,
+      "review_title": "",
+      "review_text": "beds were a bit uncomfortable. ",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-12-r5",
+      "eg_property_id": "prop-12",
+      "acquisition_date": "2024-02-14",
+      "lob": "HOTEL",
+      "rating": 3,
+      "review_title": "",
+      "review_text": "we never saw or talked with a human!  had one bath towel no face towels! our spread on bed had blood stains!  i sent a picture!  got an i apologize, that didn’t help us with morning shower!  also no soap only shampoo in the shower! not a bad location, just not managed well for guests ",
+      "author_initial": "F"
+    }
+  ],
+  "prop-01": [
+    {
+      "id": "prop-01-r1",
+      "eg_property_id": "prop-01",
+      "acquisition_date": "2026-02-05",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "if you are going to explore pompeii this is a great place to stay.  the entrance is a one minute walk and it’s not the entrance most groups use so you can get in quickly and start exploring the far end of the site for a couple of hours before the tour groups begin to reach you!  really made the time there more enjoyable.  hotel was clean - looked recently renovated, helpful staff.  breakfast was i",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-01-r2",
+      "eg_property_id": "prop-01",
+      "acquisition_date": "2026-01-01",
+      "lob": "HOTEL",
+      "rating": 3,
+      "review_title": "",
+      "review_text": "we were allocated a room in a seperate villa, about 10 mins walk from the main hotel. parking was available a few doors away in the grounds of an abandoned house. \nunfortunately the facilities described of a shop and on site restaurant were not correct, when we arrived all were under construction. the room was very basic and very old fashioned, the tv didn't work, no hot drink facilities, the show",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-01-r3",
+      "eg_property_id": "prop-01",
+      "acquisition_date": "2025-12-09",
+      "lob": "HOTEL",
+      "rating": 3,
+      "review_title": "",
+      "review_text": "basic accommodations.  bathroom sink stopped up - nasty.  place to sleep",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-01-r4",
+      "eg_property_id": "prop-01",
+      "acquisition_date": "2025-12-02",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "we enjoyed our stay here.  the hotel was clean, nice and toasty.  it is connected to their camp ground, which looked nice.  the staff were all friendly.  there is a cafe / restaurant / convenience store across the parking lot.  it is close to the archeological park and a train stop. there were restaurants, shops and a grocery store in walking distance.  we would be happy to stay again.",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-01-r5",
+      "eg_property_id": "prop-01",
+      "acquisition_date": "2025-11-04",
+      "lob": "HOTEL",
+      "rating": 4,
+      "review_title": "",
+      "review_text": "staff was courteous, room was clean, good location, and good value for money",
+      "author_initial": "F"
+    }
+  ],
+  "prop-06": [
+    {
+      "id": "prop-06-r1",
+      "eg_property_id": "prop-06",
+      "acquisition_date": "2026-01-18",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "awesome place, good and clean! ",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-06-r2",
+      "eg_property_id": "prop-06",
+      "acquisition_date": "2026-01-18",
+      "lob": "HOTEL",
+      "rating": 2,
+      "review_title": "",
+      "review_text": "premièrement, l'arrivée à l'hôtel, la gardienne de prison qui est derrière son comptoir, n'a pas répondu à mon bonjour en thai, elle ne sourit pas et m'a dit trois mots sous forme d'interrogatoire you have booking ? alors je répondis oui et ensuite elle m'a dit un seul mot passeport sans faire aucune phrase et toujours sans aucun sourire elle m'a donné la clé en disant second floor ... j'ai eu la ",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-06-r3",
+      "eg_property_id": "prop-06",
+      "acquisition_date": "2026-01-18",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "we’re delighted by |MASK| ambience and courtesy of |MASK| staff. they were attentive to our needs and helpful.",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-06-r4",
+      "eg_property_id": "prop-06",
+      "acquisition_date": "2026-01-18",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "room was clean and simple. just what we needed! |MASK| location in old town bangkok was nice, pretty easy to walk around and explore otherwise grab was used to get around! breakfast was listed as an amenity but wasn’t offered to us during check in. there was a cafe on |MASK| corner we used. ",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-06-r5",
+      "eg_property_id": "prop-06",
+      "acquisition_date": "2025-12-04",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "we loved our stay at |MASK| |MASK| |MASK|! |MASK| beds were super comfortable and |MASK| whole place had a cute, calming aesthetic with orchids in bloom. |MASK| only downside was |MASK| wet-room bathroom — |MASK| shower leaked and left |MASK| floor wet longer than ideal.\n\n|MASK| location is perfect: a quiet street but steps from great restaurants, shops, and old city attractions. we visited |MASK|",
+      "author_initial": "F"
+    }
+  ],
+  "prop-03": [
+    {
+      "id": "prop-03-r1",
+      "eg_property_id": "prop-03",
+      "acquisition_date": "2025-12-07",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "sehr empfehlenswertes hotel.\ndie gastgeber sind so warmherzig und aufmerksam, da hat man sich wirklich sehr willkommen gefühlt.\ndas zimmer war unglaublich schön! \ngroß und neu mit, viel holz und ein super bequemes bett.\nfrühstück ebenfalls sehr toll und auf wunsch gab es auch sojamilch zum kaffee.\ndas\npreis-/leistungsverhältnis ist sensationell!",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-03-r2",
+      "eg_property_id": "prop-03",
+      "acquisition_date": "2023-11-23",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "ein sehr gutes familäres gasthaus. herzlicher empfang. deftiges essen. überschaubares frühstück ( nichr überladen ). ruhige gegend, genau richtig für alle die das einfache aber herzliche lieben ",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-03-r3",
+      "eg_property_id": "prop-03",
+      "acquisition_date": "2023-09-23",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "we had a great stay. the hosts were very friendly, they gave us a nice and warm welcome. they also gave us some advice about the activities in the region as we were not really familiar with it yet. there were many nice activities closeby because the accomodation is close to the black forrest. we would definitely recommend this accomodation.",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-03-r4",
+      "eg_property_id": "prop-03",
+      "acquisition_date": "2023-04-17",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "sehr freundliche gastgeber, nah an freudenstadt und doch im grünen, mit weitblick, gemütliche gaststube, bequemes bett im neu gestaltetes zimmer, schön ruhig, sauber :) wir kommen gerne wieder!",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-03-r5",
+      "eg_property_id": "prop-03",
+      "acquisition_date": "2023-03-16",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "we had an incredible stay here. the property is beautiful and the rooms are amazing. we had a beautiful view from our room and balcony, and the room was stunning too. incredible service from the delightful owners. the food was delicious and the drinks were brilliant. we wished we were staying here longer and will absolutely be back! thank you for an amazing stay! we cannot recommend it highly enou",
+      "author_initial": "F"
+    }
+  ],
+  "prop-10": [
+    {
+      "id": "prop-10-r1",
+      "eg_property_id": "prop-10",
+      "acquisition_date": "2024-08-07",
+      "lob": "HOTEL",
+      "rating": 4,
+      "review_title": "",
+      "review_text": "my stay was good! just a bit of hustle and bustle at the hotel during breakfast!\n\nthanks",
+      "author_initial": "D"
+    },
+    {
+      "id": "prop-10-r2",
+      "eg_property_id": "prop-10",
+      "acquisition_date": "2023-05-01",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "very nice!  safe, clean, affordable and great breakfast ",
+      "author_initial": "K"
+    },
+    {
+      "id": "prop-10-r3",
+      "eg_property_id": "prop-10",
+      "acquisition_date": "2023-03-17",
+      "lob": "HOTEL",
+      "rating": 5,
+      "review_title": "",
+      "review_text": "best location",
+      "author_initial": "R"
+    },
+    {
+      "id": "prop-10-r4",
+      "eg_property_id": "prop-10",
+      "acquisition_date": "2023-03-16",
+      "lob": "HOTEL",
+      "rating": 4,
+      "review_title": "",
+      "review_text": "it’s well located. it’s opposite to the riverside mall. we enjoy shopping ",
+      "author_initial": "Y"
+    },
+    {
+      "id": "prop-10-r5",
+      "eg_property_id": "prop-10",
+      "acquisition_date": "2023-03-16",
+      "lob": "HOTEL",
+      "rating": 3,
+      "review_title": "",
+      "review_text": "our room was nothing like the pictures featured on the internet. the floors were all tile and the overall look and feel was institutional grey, white and black.  it was not at all inviting, and i would never recommend it to anyone. also, despite advertising unlimited internet, even in the rooms, the only place that we could connect is in the lobby.  the only positive experience was the staff who w",
+      "author_initial": "F"
+    }
+  ]
+}

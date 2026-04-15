@@ -1,0 +1,90 @@
+[
+  {
+    "username": "admin",
+    "password": "admin2026",
+    "full_name": "Alex Kim (Admin)",
+    "initial": "A",
+    "city": "Seattle, USA",
+    "role": "admin"
+  },
+  {
+    "username": "sarahc",
+    "password": "travel2026",
+    "full_name": "Sarah Chen",
+    "initial": "S",
+    "city": "San Francisco, USA",
+    "role": "user"
+  },
+  {
+    "username": "marcusj",
+    "password": "travel2026",
+    "full_name": "Marcus Johnson",
+    "initial": "M",
+    "city": "Atlanta, USA",
+    "role": "user"
+  },
+  {
+    "username": "priyap",
+    "password": "travel2026",
+    "full_name": "Priya Patel",
+    "initial": "P",
+    "city": "London, UK",
+    "role": "user"
+  },
+  {
+    "username": "diegor",
+    "password": "travel2026",
+    "full_name": "Diego Ramirez",
+    "initial": "D",
+    "city": "Mexico City, Mexico",
+    "role": "user"
+  },
+  {
+    "username": "emmaw",
+    "password": "travel2026",
+    "full_name": "Emma Williams",
+    "initial": "E",
+    "city": "Sydney, Australia",
+    "role": "user"
+  },
+  {
+    "username": "hiroshit",
+    "password": "travel2026",
+    "full_name": "Hiroshi Tanaka",
+    "initial": "H",
+    "city": "Tokyo, Japan",
+    "role": "user"
+  },
+  {
+    "username": "ameliab",
+    "password": "travel2026",
+    "full_name": "Amelia Brown",
+    "initial": "A",
+    "city": "Toronto, Canada",
+    "role": "user"
+  },
+  {
+    "username": "khalidh",
+    "password": "travel2026",
+    "full_name": "Khalid Hassan",
+    "initial": "K",
+    "city": "Dubai, UAE",
+    "role": "user"
+  },
+  {
+    "username": "sofiar",
+    "password": "travel2026",
+    "full_name": "Sofia Rossi",
+    "initial": "S",
+    "city": "Milan, Italy",
+    "role": "user"
+  },
+  {
+    "username": "liamo",
+    "password": "travel2026",
+    "full_name": "Liam O'Connor",
+    "initial": "L",
+    "city": "Dublin, Ireland",
+    "role": "user"
+  }
+]
