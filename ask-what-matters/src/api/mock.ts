@@ -24,7 +24,6 @@ import type {
 import propertiesRaw from './data-properties.json';
 import reviewsRaw from './data-reviews.json';
 import usersRaw from './data-users.json';
-import { SMART_QUESTIONS } from './data-smart-questions';
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -154,8 +153,7 @@ export async function getReviews(id: string): Promise<ApiResult<Review[]>> {
 }
 
 export async function getSmartQuestions(id: string): Promise<ApiResult<SmartQuestion[]>> {
-  await sleep(300);
-  return { ok: true, data: SMART_QUESTIONS[id] ?? [] };
+  throw new Error("Smart questions mock has been removed. Use the real backend logic.");
 }
 
 export async function transcribeVoice(_audio: Blob): Promise<ApiResult<{ text: string }>> {

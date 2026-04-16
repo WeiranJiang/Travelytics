@@ -39,7 +39,7 @@ export async function GET(
   }
 
   // 3. Attempt to generate "Smart" text via OpenAI
-  let generatedQuestions: { id: string, text: string }[] = [];
+  let generatedQuestions: { target_label: string, text: string, reason: string }[] = [];
   try {
     const openai = getOpenAI();
     const model = "gpt-4o-mini";
@@ -54,30 +54,48 @@ export async function GET(
       ${gaps.map(g => `- ${g.label} (${g.gapType}): Score ${g.finalScore.toFixed(2)}. Signals: Temporal=${g.temporalScore}, Controversy=${g.controversyScore}, FreeText=${g.freeTextScore}`).join("\n")}
 
       Task: Generate exactly 2 high-priority, friendly, and natural questions to ask a guest to fill these gaps.
-      The questions should be concise and sound like they are coming from a helpful travel assistant.
-      Return ONLY valid JSON in this format:
-      {
-        "questions": [
-          { "target_label": "label_of_gap", "text": "The question text" }
-        ]
-      }
+      The "text" must be the actual concise question coming from a helpful travel assistant.
+      The "reason" must be a brief explanation of WHY we are asking this question (e.g. "Breakfast appears in the listing, but recent reviews mention it infrequently so updated feedback improves confidence.").
+      Return ONLY valid JSON.
     `.trim();
 
     const response = await openai.chat.completions.create({
       model,
       messages: [{ role: "system", content: prompt }],
-      response_format: { type: "json_object" },
+      response_format: {
+        type: "json_schema",
+        json_schema: {
+          name: "smart_questions_response",
+          strict: true,
+          schema: {
+            type: "object",
+            properties: {
+              questions: {
+                type: "array",
+                items: {
+                  type: "object",
+                  properties: {
+                    target_label: { type: "string", description: "Must match the gap label exactly" },
+                    text: { type: "string" },
+                    reason: { type: "string" }
+                  },
+                  required: ["target_label", "text", "reason"],
+                  additionalProperties: false
+                }
+              }
+            },
+            required: ["questions"],
+            additionalProperties: false
+          }
+        }
+      },
       temperature: 0.7,
     });
 
     const content = response.choices[0]?.message?.content;
     if (content) {
-      const parsed = JSON.parse(content) as { questions: { target_label: string, text: string }[] };
-      generatedQuestions = parsed.questions.map((q, i) => ({
-        id: `ai_${i}`,
-        text: q.text,
-        target_label: q.target_label
-      }));
+      const parsed = JSON.parse(content) as { questions: { target_label: string, text: string, reason: string }[] };
+      generatedQuestions = parsed.questions;
     }
   } catch (error) {
     console.error("OpenAI Question Generation failed:", error);
@@ -90,7 +108,7 @@ export async function GET(
     return {
       id: `gap_${g.id}`,
       text: aiMatch?.text || questionTextFor(g.label, g.gapType),
-      reason: reasonFor(g),
+      reason: aiMatch?.reason || reasonFor(g),
       target_gap: g.label,
       category: g.gapType,
       confidence: Number(g.finalScore.toFixed(2)),

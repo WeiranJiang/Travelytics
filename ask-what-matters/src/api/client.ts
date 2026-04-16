@@ -81,7 +81,6 @@ export async function getReviews(id: string): Promise<ApiResult<Review[]>> {
  * include a `reason` per question so the UI can show WHY we're asking.
  */
 export async function getSmartQuestions(id: string): Promise<ApiResult<SmartQuestion[]>> {
-  if (USE_MOCKS) return mock.getSmartQuestions(id);
   return http<SmartQuestion[]>(`/properties/${encodeURIComponent(id)}/smart-questions`);
 }
 
