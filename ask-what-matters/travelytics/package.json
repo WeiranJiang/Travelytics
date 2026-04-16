@@ -1,0 +1,35 @@
+{
+  "name": "travelytics",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "import:data": "tsx scripts/import-data.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.9.1",
+    "@tailwindcss/postcss": "^4.2.2",
+    "csv-parse": "^5.5.5",
+    "franc-min": "^6.2.0",
+    "ml-kmeans": "^6.0.0",
+    "next": "^16.2.3",
+    "openai": "^6.34.0",
+    "prisma": "^5.9.1",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "^16.2.3",
+    "postcss": "^8",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5"
+  }
+}

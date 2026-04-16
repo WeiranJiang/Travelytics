@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* ── Expedia EGDS Design Tokens ── */
+@theme inline {
+  /* Colors */
+  --color-navy:              #191E3B;
+  --color-navy-ink:          #0C0E1C;
+  --color-navy-800:          #0F2138;
+
+  --color-action:            #1668E3;
+  --color-action-hover:      #0D4EAF;
+  --color-action-active:     #0E3672;
+  --color-action-subtle:     #ECF4FD;
+  --color-action-selected:   #C8DFF9;
+
+  --color-brand-yellow:      #FDDB32;
+  --color-brand-gold:        #FFB800;
+
+  --color-surface-base:      #FFFFFF;
+  --color-surface-contrast:  #EFF3F7;
+  --color-surface-highlight: #FFF9D9;
+
+  --color-ink:               #191E3B;
+  --color-ink-muted:         #676A7D;
+  --color-ink-inverse:       #FFFFFF;
+
+  --color-divider:           #DFE0E4;
+  --color-positive:          #227950;
+  --color-negative:          #A7183C;
+  --color-info:              #7C6F9B;
+  --color-featured:          #6AE0EB;
+
+  /* Shadows */
+  --shadow-float: 0px 2px 0.75rem rgba(12, 14, 28, 0.08);
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-navy);
+  background-color: #ffffff;
+}

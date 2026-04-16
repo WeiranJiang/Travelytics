@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Property {
+  id                            String   @id @default(cuid())
+  egPropertyId                  String   @unique
+  guestRatingAvgExpedia         Float?
+  city                          String?
+  province                      String?
+  country                       String?
+  starRating                    Float?
+  areaDescription               String?
+  propertyDescription           String?
+  popularAmenitiesList          String?
+  propertyAmenityAccessibility  String?
+  propertyAmenityActivitiesNearby String?
+  propertyAmenityBusinessServices String?
+  propertyAmenityConveniences   String?
+  propertyAmenityFamilyFriendly String?
+  propertyAmenityFoodAndDrink   String?
+  propertyAmenityGuestServices  String?
+  propertyAmenityInternet       String?
+  propertyAmenityLangsSpoken    String?
+  propertyAmenityMore           String?
+  propertyAmenityOutdoor        String?
+  propertyAmenityParking        String?
+  propertyAmenitySpa            String?
+  propertyAmenityThingsToDo     String?
+  checkInStartTime              String?
+  checkInEndTime                String?
+  checkOutTime                  String?
+  checkOutPolicy                String?
+  petPolicy                     String?
+  childrenAndExtraBedPolicy     String?
+  checkInInstructions           String?
+  knowBeforeYouGo               String?
+
+  reviews    ImportedReview[]
+  gapScores  PropertyFinalGap[]
+  cluster    PropertyCluster?
+}
+
+model ImportedReview {
+  id              String   @id @default(cuid())
+  egPropertyId    String
+  acquisitionDate DateTime?
+  lob             String?
+  rating          String?
+  reviewTitle     String?
+  reviewText      String?
+
+  translatedReviewTitle String?
+  translatedReviewText  String?
+  detectedLanguage      String?
+  translationStatus     String   @default("pending") // pending | skipped_english | translated | failed
+  translationModel      String?
+  translationUpdatedAt  DateTime?
+
+  property Property @relation(fields: [egPropertyId], references: [egPropertyId], onDelete: Cascade)
+
+  @@index([egPropertyId])
+}
+
+model PropertyCluster {
+  id         String   @id @default(cuid())
+  propertyId String   @unique
+  clusterId  Int
+  featureJson String?
+  updatedAt  DateTime @updatedAt
+
+  property Property @relation(fields: [propertyId], references: [egPropertyId], onDelete: Cascade)
+}
+
+model PropertyFinalGap {
+  id               String   @id @default(cuid())
+  propertyId       String
+  gapType          String
+  label            String
+
+  temporalScore    Float    @default(0)
+  freeTextScore    Float    @default(0)
+  clusterScore     Float    @default(0)
+  controversyScore Float    @default(0)
+  listingScore     Float    @default(0)
+  driftScore       Float    @default(0)
+  finalScore       Float    @default(0)
+
+  metadataJson     String?
+  updatedAt        DateTime @updatedAt
+
+  property Property @relation(fields: [propertyId], references: [egPropertyId], onDelete: Cascade)
+
+  @@unique([propertyId, gapType, label])
+  @@index([propertyId, finalScore])
+}
