@@ -47,7 +47,7 @@ export async function getAdminProperties() {
   return prisma.property.findMany({
     include: {
       gapScores: { orderBy: { finalScore: "desc" }, take: 50 },
-      reviews: { orderBy: { acquisitionDate: "desc" }, take: 3 },
+      reviews: { orderBy: { acquisitionDate: "desc" }, take: 10 },
       cluster: true,
     },
     orderBy: [{ guestRatingAvgExpedia: "desc" }, { city: "asc" }],

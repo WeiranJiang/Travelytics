@@ -18,6 +18,20 @@ export type FinalGapRow = {
     metadata: Record<string, unknown>;
 };
 
+function normalizeLabel(label: string): string {
+    const map: Record<string, string> = {
+        roomcleanliness: "cleanliness",
+        roomcomfort: "comfort",
+        roomamenitiesscore: "amenities",
+        valueformoney: "value for money",
+        ecofriendliness: "eco-friendliness",
+        neighborhoodsatisfaction: "neighborhood",
+        pet_friendly: "pet friendly",
+        onlinelisting: "listing accuracy",
+    };
+    return map[label] || label.replace(/_/g, " ");
+}
+
 export function parseRatingJson(ratingValue: string | null): Record<string, number> {
     if (!ratingValue?.trim()) return {};
     try {
@@ -255,108 +269,80 @@ export async function computeFinalGapMatrix(
 ): Promise<FinalGapRow[]> {
     const allGaps = new Map<string, Omit<FinalGapRow, "propertyId" | "finalScore">>();
 
+    const getOrCreateGap = (rawLabel: string, type: string) => {
+        const label = normalizeLabel(rawLabel);
+        if (!allGaps.has(label)) {
+            allGaps.set(label, {
+                gapType: type,
+                label: label,
+                temporalScore: 0,
+                freeTextScore: 0,
+                clusterScore: 0,
+                controversyScore: 0,
+                listingScore: 0,
+                driftScore: 0,
+                metadata: {},
+            });
+        }
+        const gap = allGaps.get(label)!;
+        // Priority for gapType: rating_dim > amenity > schema_gap > topic > drift
+        const typePriority: Record<string, number> = { rating_dim: 1, amenity: 2, schema_gap: 3, topic: 4, drift: 5 };
+        if (typePriority[type] < typePriority[gap.gapType]) {
+            gap.gapType = type;
+        }
+        return gap;
+    };
+
     for (const dim of DIMENSIONS) {
         const score = temporalGapScore(propertyId, dim, reviews);
-        const key = `rating_dim::${dim}`;
-        allGaps.set(key, {
-            gapType: "rating_dim",
-            label: dim,
-            temporalScore: score,
-            freeTextScore: 0,
-            clusterScore: 0,
-            controversyScore: 0,
-            listingScore: 0,
-            driftScore: 0,
-            metadata: {},
-        });
+        if (score <= 0) continue;
+        const gap = getOrCreateGap(dim, "rating_dim");
+        gap.temporalScore = score;
     }
 
     const rawCandidates = extractRawSchemaGapCandidates(propertyId, reviews);
     const validated = await validateSchemaGaps(propertyId, rawCandidates);
 
     for (const topic of validated.filter((t) => t.keep)) {
-        const key = `schema_gap::${topic.canonicalLabel}`;
-        const existing = allGaps.get(key);
+        const gap = getOrCreateGap(topic.canonicalLabel, "schema_gap");
         
         const mergedRate = rawCandidates
             .filter(c => topic.rawLabels.includes(c.rawLabel))
             .reduce((sum, c) => sum + c.rate, 0);
             
         const score = Math.min(1, mergedRate * 10) * topic.confidence;
-
-        allGaps.set(key, {
-            gapType: "schema_gap",
-            label: topic.canonicalLabel,
-            temporalScore: existing?.temporalScore ?? 0,
-            freeTextScore: score,
-            clusterScore: existing?.clusterScore ?? 0,
-            controversyScore: existing?.controversyScore ?? 0,
-            listingScore: existing?.listingScore ?? 0,
-            driftScore: existing?.driftScore ?? 0,
-            metadata: { 
-                rawLabels: topic.rawLabels,
-                confidence: topic.confidence,
-                reason: topic.reason,
-                sampleEvidence: topic.sampleEvidence,
-                mergedRate
-            },
-        });
+        gap.freeTextScore = Math.max(gap.freeTextScore, score);
+        gap.metadata = { 
+            ...gap.metadata,
+            rawLabels: [...(gap.metadata.rawLabels as string[] ?? []), ...topic.rawLabels],
+            confidence: topic.confidence,
+            mergedRate: (gap.metadata.mergedRate as number ?? 0) + mergedRate
+        };
     }
 
     const controversy = controversyScores(propertyId, reviews);
     for (const [topic, info] of Object.entries(controversy)) {
-        const key = `topic::${topic}`;
-        const existing = allGaps.get(key);
-        allGaps.set(key, {
-            gapType: existing?.gapType ?? "topic",
-            label: topic,
-            temporalScore: existing?.temporalScore ?? 0,
-            freeTextScore: existing?.freeTextScore ?? 0,
-            clusterScore: existing?.clusterScore ?? 0,
-            controversyScore: info.controversyScore,
-            listingScore: existing?.listingScore ?? 0,
-            driftScore: existing?.driftScore ?? 0,
-            metadata: { ...(existing?.metadata ?? {}), positive: info.positive, negative: info.negative },
-        });
+        const gap = getOrCreateGap(topic, "topic");
+        gap.controversyScore = info.controversyScore;
+        gap.metadata = { ...gap.metadata, positive: info.positive, negative: info.negative };
     }
 
     const listing = listingVsRealityGaps(propertyId, property, reviews);
-    for (const gap of listing) {
-        const key = `amenity::${gap.amenity}`;
-        const existing = allGaps.get(key);
-        allGaps.set(key, {
-            gapType: "amenity",
-            label: gap.amenity,
-            temporalScore: existing?.temporalScore ?? 0,
-            freeTextScore: existing?.freeTextScore ?? 0,
-            clusterScore: existing?.clusterScore ?? 0,
-            controversyScore: existing?.controversyScore ?? 0,
-            listingScore: gap.gapScore,
-            driftScore: existing?.driftScore ?? 0,
-            metadata: { ...(existing?.metadata ?? {}), mentionRate: gap.mentionRate, mentionCount: gap.mentionCount },
-        });
+    for (const info of listing) {
+        const gap = getOrCreateGap(info.amenity, "amenity");
+        gap.listingScore = info.gapScore;
+        gap.metadata = { ...gap.metadata, mentionRate: info.mentionRate, mentionCount: info.mentionCount };
     }
 
     for (const topic of TOPIC_TAXONOMY) {
         const drift = sentimentDriftScore(propertyId, topic, reviews);
         if (drift.direction === "stable") continue;
-        const key = `drift::${topic}`;
-        const existing = allGaps.get(key);
-        allGaps.set(key, {
-            gapType: "drift",
-            label: topic,
-            temporalScore: existing?.temporalScore ?? 0,
-            freeTextScore: existing?.freeTextScore ?? 0,
-            clusterScore: existing?.clusterScore ?? 0,
-            controversyScore: existing?.controversyScore ?? 0,
-            listingScore: existing?.listingScore ?? 0,
-            driftScore: drift.gapScore,
-            metadata: { ...(existing?.metadata ?? {}), direction: drift.direction },
-        });
+        const gap = getOrCreateGap(topic, "drift");
+        gap.driftScore = drift.gapScore;
+        gap.metadata = { ...gap.metadata, direction: drift.direction };
     }
 
     for (const row of allGaps.values()) {
-        // Fix 2: use Math.max (not ||) so the strongest signal wins, not just the first truthy one
         const baseForCluster = Math.max(
             row.temporalScore,
             row.listingScore,

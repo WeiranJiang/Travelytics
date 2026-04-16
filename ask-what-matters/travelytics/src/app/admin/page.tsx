@@ -83,6 +83,10 @@ export default async function AdminPage() {
             ...dim,
             gap: gapByKey[`rating_dim::${dim.key}`],
           }));
+          
+          const validReviews = p.reviews
+            .filter(r => (r.translatedReviewTitle || r.reviewTitle) || (r.translatedReviewText || r.reviewText))
+            .slice(0, 3);
 
           return (
             <div key={p.egPropertyId} className="overflow-hidden rounded-2xl border bg-white shadow-sm">
@@ -97,21 +101,21 @@ export default async function AdminPage() {
                     </div>
                     <h2 className="text-lg font-bold leading-snug">
                       <Link href={`/hotels/${p.egPropertyId}`} className="hover:underline">
-                        {p.propertyDescription?.slice(0, 80) || p.egPropertyId}
+                        {p.city && p.country ? `Hotel in ${p.city}, ${p.country}` : (p.propertyDescription?.slice(0, 80) || p.egPropertyId)}
                       </Link>
                     </h2>
                     <p className="mt-0.5 text-xs text-gray-400 font-mono">{p.egPropertyId}</p>
                   </div>
                   <div className="shrink-0 text-right">
-                    {p.guestRatingAvgExpedia && (
+                    {p.guestRatingAvgExpedia ? (
                       <div className="inline-flex flex-col items-center rounded-xl bg-blue-900 px-4 py-2 text-white">
                         <span className="text-2xl font-bold">{p.guestRatingAvgExpedia.toFixed(1)}</span>
                         <span className="text-xs opacity-80">Guest rating</span>
                       </div>
-                    )}
-                    {p.starRating && (
+                    ) : null}
+                    {p.starRating ? (
                       <p className="mt-1 text-xs text-gray-400">{"★".repeat(p.starRating)}</p>
-                    )}
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -228,11 +232,11 @@ export default async function AdminPage() {
                   </div>
 
                   {/* Recent guest reviews */}
-                  {p.reviews.length > 0 && (
+                  {validReviews.length > 0 && (
                     <div className="px-6 py-5">
                       <h3 className="mb-3 text-sm font-semibold">Recent guest reviews</h3>
                       <div className="space-y-4">
-                        {p.reviews.map((r) => {
+                        {validReviews.map((r) => {
                           const initials = `Guest ${String.fromCharCode(65 + Math.abs(r.id.charCodeAt(0) % 26))}`;
                           return (
                             <div key={r.id} className="flex gap-3">
@@ -244,11 +248,11 @@ export default async function AdminPage() {
                                   <span className="text-sm font-medium">{initials}.</span>
                                   <span className="text-xs text-gray-400">{formatDate(r.acquisitionDate)}</span>
                                 </div>
-                                {r.reviewTitle && (
-                                  <p className="text-sm font-medium text-gray-800 mt-0.5">{r.reviewTitle}</p>
-                                )}
+                                {r.translatedReviewTitle || r.reviewTitle ? (
+                                  <p className="text-sm font-medium text-gray-800 mt-0.5">{r.translatedReviewTitle || r.reviewTitle}</p>
+                                ) : null}
                                 <p className="mt-0.5 text-sm text-gray-600 line-clamp-2">
-                                  {r.reviewText || "—"}
+                                  {r.translatedReviewText || r.reviewText || "—"}
                                 </p>
                               </div>
                             </div>

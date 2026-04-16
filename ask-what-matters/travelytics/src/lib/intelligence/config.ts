@@ -53,6 +53,16 @@ export const TOPIC_TAXONOMY = [
     "location",
     "safety",
     "value",
+    "spa",
+    "pool",
+    "gym",
+    "restaurant",
+    "bar",
+    "accessibility",
+    "shuttle",
+    "laundry",
+    "ac",
+    "business",
 ];
 
 export const FINAL_WEIGHTS = {
@@ -75,6 +85,10 @@ export const AMENITY_THRESHOLDS: Record<string, number> = {
     wifi: 0.08,
     pet_friendly: 0.03,
     accessibility: 0.02,
+    shuttle: 0.03,
+    laundry: 0.03,
+    ac: 0.05,
+    business: 0.03,
 };
 
 export const AMENITY_CHECK: Record<
@@ -125,5 +139,21 @@ export const AMENITY_CHECK: Record<
     accessibility: {
         reviewKeywords: ["wheelchair", "accessible", "accessibility"],
         descFields: ["propertyAmenityAccessibility"],
+    },
+    shuttle: {
+        reviewKeywords: ["shuttle", "airport transfer", "transport"],
+        descFields: ["propertyAmenityGuestServices", "popularAmenitiesList"],
+    },
+    laundry: {
+        reviewKeywords: ["laundry", "wash", "dryer"],
+        descFields: ["propertyAmenityGuestServices", "popularAmenitiesList"],
+    },
+    ac: {
+        reviewKeywords: ["ac", "air condition", "air-conditioning", "cooler"],
+        descFields: ["propertyAmenityConveniences", "popularAmenitiesList"],
+    },
+    business: {
+        reviewKeywords: ["business center", "print", "computer", "meeting"],
+        descFields: ["propertyAmenityBusinessServices", "popularAmenitiesList"],
     },
 };

@@ -84,6 +84,9 @@ export async function syncAdminScores() {
 
     // Pass 3: Final run — now that temporalMatrix is fully populated with all peer
     // data, cluster scores are accurate. Persist results to DB.
+    // Ensure we delete all old gaps so we don't end up with orphaned entries that were filtered out
+    await prisma.propertyFinalGap.deleteMany();
+    
     for (const property of typedProperties) {
         const rows = await computeFinalGapMatrix(
             property.egPropertyId,
